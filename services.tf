@@ -9,8 +9,8 @@ module "service_whois" {
   service_name      = "service-whois"
   service_base_path = ["/whois*", "/whois-prod*"]
   # service_base_path-prod = ["/whois-prod*"]
-  service_priority  = 400
-  container_port    = 8080
+  service_priority = 400
+  container_port   = 8080
 
   service_launch_type = "FARGATE"
 
@@ -25,20 +25,20 @@ module "service_whois" {
   }
 
   # Cluster to deploy your service - see in clusters.tf
-  cluster_name      = var.cluster_name
-  cluster_id        = module.cluster_example.cluster_id
-  cluster_listener  = module.cluster_example.listener
-  cluster_mesh      = module.cluster_example.cluster_mesh
+  cluster_name     = var.cluster_name
+  cluster_id       = module.cluster_example.cluster_id
+  cluster_listener = module.cluster_example.listener
+  cluster_mesh     = module.cluster_example.cluster_mesh
 
   cluster_service_discovery = module.cluster_example.cluster_service_discovery
-  
+
   cluster_name-prod = "${var.cluster_name}-prd"
   # cluster_id-prod        = module.cluster_prod.cluster_id
   # cluster_listener-prod  = module.cluster_prod.listener
   # cluster_mesh-prod      = module.cluster_prod.cluster_mesh
 
   # cluster_service_discovery-prod = module.cluster_prod.cluster_service_discovery
-  
+
 
   # Auto Scale Limits
   desired_tasks = 2
@@ -80,8 +80,8 @@ module "service_hash" {
   service_name      = "service-hash"
   service_base_path = ["/hash*", "/hash-prod*"]
   # service_base_path-prod = ["/hash-prod*"]
-  service_priority  = 500
-  container_port    = 9000
+  service_priority = 500
+  container_port   = 9000
 
   service_launch_type = "FARGATE"
 
@@ -96,10 +96,10 @@ module "service_hash" {
   }
 
   # Cluster to deploy your service - see in clusters.tf
-  cluster_name      = var.cluster_name
-  cluster_id        = module.cluster_example.cluster_id
-  cluster_listener  = module.cluster_example.listener
-  cluster_mesh      = module.cluster_example.cluster_mesh
+  cluster_name     = var.cluster_name
+  cluster_id       = module.cluster_example.cluster_id
+  cluster_listener = module.cluster_example.listener
+  cluster_mesh     = module.cluster_example.cluster_mesh
 
   cluster_service_discovery = module.cluster_example.cluster_service_discovery
 
@@ -151,8 +151,8 @@ module "service_faker" {
   service_name      = "service-faker"
   service_base_path = ["/faker*", "faker-prod*"]
   # service_base_path-prod = ["/faker-prod*"]
-  service_priority  = 600
-  container_port    = 5000
+  service_priority = 600
+  container_port   = 5000
 
   service_launch_type = "FARGATE"
 
@@ -167,10 +167,10 @@ module "service_faker" {
   }
 
   # Cluster to deploy your service - see in clusters.tf
-  cluster_name      = var.cluster_name
-  cluster_id        = module.cluster_example.cluster_id
-  cluster_listener  = module.cluster_example.listener
-  cluster_mesh      = module.cluster_example.cluster_mesh
+  cluster_name     = var.cluster_name
+  cluster_id       = module.cluster_example.cluster_id
+  cluster_listener = module.cluster_example.listener
+  cluster_mesh     = module.cluster_example.cluster_mesh
 
   cluster_service_discovery = module.cluster_example.cluster_service_discovery
 
@@ -222,8 +222,8 @@ module "service_integration" {
   service_name      = "service-integration"
   service_base_path = ["/integration*", "/integration-prod*"]
   # service_base_path-prod = ["/integration-prod*"]
-  service_priority  = 700
-  container_port    = 9000
+  service_priority = 700
+  container_port   = 9000
 
   service_launch_type = "FARGATE"
 
@@ -238,10 +238,10 @@ module "service_integration" {
   }
 
   # Cluster to deploy your service - see in clusters.tf
-  cluster_name      = var.cluster_name
-  cluster_id        = module.cluster_example.cluster_id
-  cluster_listener  = module.cluster_example.listener
-  cluster_mesh      = module.cluster_example.cluster_mesh
+  cluster_name     = var.cluster_name
+  cluster_id       = module.cluster_example.cluster_id
+  cluster_listener = module.cluster_example.listener
+  cluster_mesh     = module.cluster_example.cluster_mesh
 
   cluster_service_discovery = module.cluster_example.cluster_service_discovery
 
