@@ -1,11 +1,12 @@
 module "pipeline" {
   source              = "../pipeline"
   cluster_name        = var.cluster_name
-  cluster_name-prod   = var.cluster_name-prod
   region              = var.region
   app_service_name    = var.service_name
   container_name      = var.service_name
   app_repository_name = var.service_name
+
+  environment = var.environment
 
 
   git_full_repository_id = var.git_full_repository_id

@@ -45,8 +45,22 @@ resource "aws_codepipeline" "pipeline" {
     }
   }
 
+
   stage {
-    name = "Dev-environment"
+    name = "Approve"
+
+    action {
+      name     = "Approval"
+      category = "Approval"
+      owner    = "AWS"
+      provider = "Manual"
+      version  = "1"
+    }
+  }
+
+
+  stage {
+    name = "Deploy-${var.environment}"
 
     action {
       name            = "Deploy"
@@ -64,34 +78,34 @@ resource "aws_codepipeline" "pipeline" {
     }
   }
 
-  stage {
-    name = "Approve"
+  # stage {
+  #   name = "Approve"
 
-    action {
-      name     = "Approval"
-      category = "Approval"
-      owner    = "AWS"
-      provider = "Manual"
-      version  = "1"
-    }
-  }
+  #   action {
+  #     name     = "Approval"
+  #     category = "Approval"
+  #     owner    = "AWS"
+  #     provider = "Manual"
+  #     version  = "1"
+  #   }
+  # }
 
-  stage {
-    name = "Production"
+  # stage {
+  #   name = "Production"
 
-    action {
-      name            = "Deploy"
-      category        = "Deploy"
-      owner           = "AWS"
-      provider        = "ECS"
-      input_artifacts = ["imagedefinitions"]
-      version         = "1"
+  #   action {
+  #     name            = "Deploy"
+  #     category        = "Deploy"
+  #     owner           = "AWS"
+  #     provider        = "ECS"
+  #     input_artifacts = ["imagedefinitions"]
+  #     version         = "1"
 
-      configuration = {
-        ClusterName = var.cluster_name
-        ServiceName = "${var.app_service_name}-prod"
-        FileName    = "imagedefinitions.json"
-      }
-    }
-  }
+  #     configuration = {
+  #       ClusterName = var.cluster_name
+  #       ServiceName = "${var.app_service_name}-prod"
+  #       FileName    = "imagedefinitions.json"
+  #     }
+  #   }
+  # }
 }

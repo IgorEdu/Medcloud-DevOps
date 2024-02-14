@@ -3,5 +3,6 @@ resource "aws_cloudwatch_log_group" "logs" {
 
   tags = {
     Application = var.service_name
+    Environment = var.environment
   }
 }

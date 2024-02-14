@@ -4,7 +4,8 @@ resource "aws_vpc" "cluster_vpc" {
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name = format("%s-vpc", var.cluster_name)
+    Name        = format("%s-vpc", var.cluster_name)
+    Environment = var.environment
   }
 }
 
@@ -12,7 +13,8 @@ resource "aws_vpc" "cluster_vpc" {
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.cluster_vpc.id
   tags = {
-    Name = format("%s-igw", var.cluster_name)
+    Name        = format("%s-igw", var.cluster_name)
+    Environment = var.environment
   }
 }
 

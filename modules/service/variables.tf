@@ -92,14 +92,7 @@ variable "service_base_path" {
   type = list(any)
 }
 
-# variable "service_base_path-prod" {
-#   type = list(any)
-# }
-
-
-variable "git_full_repository_id" {
-
-}
+variable "git_full_repository_id" {}
 
 variable "git_repository_branch" {}
 
@@ -107,12 +100,6 @@ variable "availability_zones" {}
 
 variable "codestar_connector_credentials" {}
 
-# variable "cluster_listener-prod" {}
-
-variable "cluster_name-prod" {}
-
-# variable "cluster_service_discovery-prod" {}
-
-# variable "cluster_id-prod" {}
-
-# variable "cluster_mesh-prod" { default = "" }
+variable "environment" {
+  type = string
+}

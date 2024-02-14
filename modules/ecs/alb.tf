@@ -5,7 +5,7 @@ resource "aws_alb" "cluster_alb" {
 
   tags = {
     Name        = format("%s-alb", var.cluster_name)
-    Environment = "Developer"
+    Environment = var.environment
   }
 }
 

@@ -11,17 +11,3 @@ resource "aws_appmesh_virtual_service" "service" {
     }
   }
 }
-
-# resource "aws_appmesh_virtual_service" "service-prod" {
-
-#   name      = format("%s.%s.mesh", var.service_name, var.cluster_name-prod)
-#   mesh_name = var.cluster_mesh-prod
-
-#   spec {
-#     provider {
-#       virtual_node {
-#         virtual_node_name = aws_appmesh_virtual_node.blue-prod.name
-#       }
-#     }
-#   }
-# }

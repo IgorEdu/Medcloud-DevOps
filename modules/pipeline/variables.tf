@@ -2,9 +2,9 @@ variable "cluster_name" {
   description = "The cluster_name"
 }
 
-variable "cluster_name-prod" {
-  description = "The cluster_name"
-}
+# variable "cluster_name-prod" {
+#   description = "The cluster_name"
+# }
 
 variable "app_repository_name" {
   description = "ECR Repository name"
@@ -56,4 +56,8 @@ variable "target_group" {
 variable "codestar_connector_credentials" {
   description = "codestar_connector_credentials"
   type        = string
+}
+
+variable "environment" {
+  type = string
 }

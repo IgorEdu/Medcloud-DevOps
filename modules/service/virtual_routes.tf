@@ -12,18 +12,3 @@ resource "aws_appmesh_virtual_router" "router" {
     }
   }
 }
-
-# resource "aws_appmesh_virtual_router" "router-prod" {
-
-#   name      = format("%s-%s", var.cluster_name-prod, var.service_name)
-#   mesh_name = var.cluster_mesh-prod
-
-#   spec {
-#     listener {
-#       port_mapping {
-#         port     = var.container_port
-#         protocol = var.service_protocol
-#       }
-#     }
-#   }
-# }

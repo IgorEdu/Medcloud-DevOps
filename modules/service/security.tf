@@ -19,6 +19,7 @@ resource "aws_security_group" "service_sg" {
   }
 
   tags = {
-    Name = format("%s-%s-sg", var.cluster_name, var.service_name)
+    Name        = format("%s-%s-sg", var.cluster_name, var.service_name)
+    Environment = var.environment
   }
 }

@@ -1,16 +1,17 @@
 module "service_whois" {
-  source = "./modules/service"
+  source = "../../modules/service"
   vpc_id = module.vpc.vpc_id
   region = var.aws_region
+
+  environment = var.environment
 
   is_public = true
 
   # Service name
   service_name      = "service-whois"
-  service_base_path = ["/whois*", "/whois-prod*"]
-  # service_base_path-prod = ["/whois-prod*"]
-  service_priority = 400
-  container_port   = 8080
+  service_base_path = ["/whois*"]
+  service_priority  = 400
+  container_port    = 8080
 
   service_launch_type = "FARGATE"
 
@@ -31,13 +32,6 @@ module "service_whois" {
   cluster_mesh     = module.cluster_example.cluster_mesh
 
   cluster_service_discovery = module.cluster_example.cluster_service_discovery
-
-  cluster_name-prod = "${var.cluster_name}-prd"
-  # cluster_id-prod        = module.cluster_prod.cluster_id
-  # cluster_listener-prod  = module.cluster_prod.listener
-  # cluster_mesh-prod      = module.cluster_prod.cluster_mesh
-
-  # cluster_service_discovery-prod = module.cluster_prod.cluster_service_discovery
 
 
   # Auto Scale Limits
@@ -70,18 +64,19 @@ module "service_whois" {
 }
 
 module "service_hash" {
-  source = "./modules/service"
+  source = "../../modules/service"
   vpc_id = module.vpc.vpc_id
   region = var.aws_region
+
+  environment = var.environment
 
   is_public = true
 
   # Service name
   service_name      = "service-hash"
-  service_base_path = ["/hash*", "/hash-prod*"]
-  # service_base_path-prod = ["/hash-prod*"]
-  service_priority = 500
-  container_port   = 9000
+  service_base_path = ["/hash*"]
+  service_priority  = 500
+  container_port    = 9000
 
   service_launch_type = "FARGATE"
 
@@ -102,13 +97,6 @@ module "service_hash" {
   cluster_mesh     = module.cluster_example.cluster_mesh
 
   cluster_service_discovery = module.cluster_example.cluster_service_discovery
-
-  cluster_name-prod = "${var.cluster_name}-prd"
-  # cluster_id-prod        = module.cluster_prod.cluster_id
-  # cluster_listener-prod  = module.cluster_prod.listener
-  # cluster_mesh-prod      = module.cluster_prod.cluster_mesh
-
-  # cluster_service_discovery-prod = module.cluster_prod.cluster_service_discovery
 
   # Auto Scale Limits
   desired_tasks = 2
@@ -141,18 +129,19 @@ module "service_hash" {
 
 
 module "service_faker" {
-  source = "./modules/service"
+  source = "../../modules/service"
   vpc_id = module.vpc.vpc_id
   region = var.aws_region
+
+  environment = var.environment
 
   is_public = true
 
   # Service name
   service_name      = "service-faker"
-  service_base_path = ["/faker*", "faker-prod*"]
-  # service_base_path-prod = ["/faker-prod*"]
-  service_priority = 600
-  container_port   = 5000
+  service_base_path = ["/faker*"]
+  service_priority  = 600
+  container_port    = 5000
 
   service_launch_type = "FARGATE"
 
@@ -173,13 +162,6 @@ module "service_faker" {
   cluster_mesh     = module.cluster_example.cluster_mesh
 
   cluster_service_discovery = module.cluster_example.cluster_service_discovery
-
-  cluster_name-prod = "${var.cluster_name}-prd"
-  # cluster_id-prod        = module.cluster_prod.cluster_id
-  # cluster_listener-prod  = module.cluster_prod.listener
-  # cluster_mesh-prod      = module.cluster_prod.cluster_mesh
-
-  # cluster_service_discovery-prod = module.cluster_prod.cluster_service_discovery
 
   # Auto Scale Limits
   desired_tasks = 2
@@ -212,18 +194,20 @@ module "service_faker" {
 
 
 module "service_integration" {
-  source = "./modules/service"
+  source = "../../modules/service"
   vpc_id = module.vpc.vpc_id
   region = var.aws_region
+
+  environment = var.environment
+
 
   is_public = true
 
   # Service name
   service_name      = "service-integration"
-  service_base_path = ["/integration*", "/integration-prod*"]
-  # service_base_path-prod = ["/integration-prod*"]
-  service_priority = 700
-  container_port   = 9000
+  service_base_path = ["/integration*"]
+  service_priority  = 700
+  container_port    = 9000
 
   service_launch_type = "FARGATE"
 
@@ -244,13 +228,6 @@ module "service_integration" {
   cluster_mesh     = module.cluster_example.cluster_mesh
 
   cluster_service_discovery = module.cluster_example.cluster_service_discovery
-
-  cluster_name-prod = "${var.cluster_name}-prd"
-  # cluster_id-prod        = module.cluster_prod.cluster_id
-  # cluster_listener-prod  = module.cluster_prod.listener
-  # cluster_mesh-prod      = module.cluster_prod.cluster_mesh
-
-  # cluster_service_discovery-prod = module.cluster_prod.cluster_service_discovery
 
   # Auto Scale Limits
   desired_tasks = 2

@@ -8,7 +8,8 @@ resource "aws_subnet" "public_subnet_us_east_1a" {
   availability_zone       = "us-east-1a"
 
   tags = {
-    Name = format("%s-public-subnet-1a", var.cluster_name)
+    Name        = format("%s-public-subnet-1a", var.cluster_name)
+    Environment = var.environment
   }
 }
 
@@ -20,7 +21,8 @@ resource "aws_subnet" "public_subnet_us_east_1b" {
   availability_zone       = "us-east-1b"
 
   tags = {
-    Name = format("%s-public-subnet-1b", var.cluster_name)
+    Name        = format("%s-public-subnet-1b", var.cluster_name)
+    Environment = var.environment
   }
 }
 

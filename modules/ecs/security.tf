@@ -18,6 +18,7 @@ resource "aws_security_group" "alb_sg" {
   }
 
   tags = {
-    Name = format("%s-alb-sg", var.cluster_name)
+    Name        = format("%s-alb-sg", var.cluster_name)
+    Environment = var.environment
   }
 }

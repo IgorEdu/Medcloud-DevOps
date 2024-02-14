@@ -13,6 +13,7 @@ resource "aws_cloudwatch_log_group" "web-app" {
 
   tags = {
     Application = var.cluster_name
+    Environment = var.environment
   }
 }
 

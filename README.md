@@ -7,6 +7,12 @@ Create clusters and services and pipelines on AWS using Terraform.
 
 # How to Deploy
 
+## Navigate to path environments
+
+```bash
+cd environments\dev
+```
+
 ## Edit AWS Configurations
 
 Create terraform.tfvars file
@@ -14,6 +20,7 @@ Create terraform.tfvars file
 ```hcl
 cluster_name                   = "medcloud"
 aws_region                     = "us-east-1"
+environment                    = "dev"
 codestar_connector_credentials = "arn:aws:codestar-connections:us-east-1:<aws_account_id>:connection/d21fae76-3ebf-4955-a475-5248ab45a39d"
 ```
 
