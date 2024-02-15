@@ -1,7 +1,7 @@
 
-# Microservices Orchestration on ECS with CodePipeline
+# Microservices Orchestration on ECS with CodePipeline using Terraform
 
-### Microservices Deploy and Orchestration on Amazon ECS using Terraform
+### Microservices Deploy and Orchestration on Amazon ECS with CodePipeline using Terraform
 
 Create clusters and services and pipelines on AWS using Terraform.
 
