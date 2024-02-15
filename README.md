@@ -9,7 +9,7 @@ Create clusters and services and pipelines on AWS using Terraform.
 
 ## How to Deploy
 
-### 1) Navigate to path environments
+### 1) Navigate to the environments path
 
 ```bash
 cd environments\dev
